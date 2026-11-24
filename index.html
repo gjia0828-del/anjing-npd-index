@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07090c" />
+  <meta name="description" content="暗镜：测一测你的 NPD 指数。16 个瞬间，观察你的自恋能量、防御方式与共情切换。" />
+  <title>暗镜 · 测一测你的 NPD 指数</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <button class="brand" data-action="home" aria-label="返回首页">
+      <span class="brand-mark">◈</span>
+      <span class="brand-name">暗镜</span>
+      <small>DARK MIRROR</small>
+    </button>
+    <div class="header-meta"><span>NPD TRAIT INDEX</span><span>16 SCENES</span></div>
+  </header>
+
+  <main>
+    <section class="screen landing-screen is-active" id="landingScreen" aria-labelledby="heroTitle">
+      <div class="landing-copy">
+        <div class="eyebrow">SELF-MIRROR / NARCISSISM TRAIT INDEX</div>
+        <h1 class="hero-title" id="heroTitle">
+          <span>测一测你的</span>
+          <strong>NPD<span>指数</span></strong>
+        </h1>
+        <p class="hero-lead">16 个日常瞬间，看看你的自恋能量来自哪里，又是在保护什么。</p>
+        <div class="hero-actions">
+          <button class="primary-button" data-action="start">照一照我的自恋能量 <span>↗</span></button>
+          <button class="resume-button" id="resumeButton" data-action="resume" hidden>继续上次测试</button>
+        </div>
+        <div class="hero-facts"><span>4 个维度</span><span>16 道情景题</span><span>约 3 分钟</span></div>
+        <p class="disclaimer">娱乐向自我观察 · 不是 NPD 诊断 · 不替代专业帮助</p>
+      </div>
+
+      <div class="mirror-stage" aria-hidden="true">
+        <div class="red-aura"></div>
+        <div class="mirror-frame">
+          <div class="mirror-glass">
+            <div class="mirror-reflection"></div>
+            <div class="mirror-eye"></div>
+            <span class="crack crack-a"></span>
+            <span class="crack crack-b"></span>
+            <span class="crack crack-c"></span>
+            <span class="crack crack-d"></span>
+            <div class="mirror-caption">LOOK CLOSER<br /><small>THE MIRROR ALWAYS ANSWERS</small></div>
+          </div>
+        </div>
+        <div class="mirror-label mirror-label-top">SELF<br />IMAGE</div>
+        <div class="mirror-label mirror-label-right">POWER<br />SHADOW</div>
+        <div class="mirror-label mirror-label-bottom">NOT A DIAGNOSIS</div>
+        <div class="red-line"></div>
+      </div>
+
+      <div class="landing-footer"><span>THE THING YOU REFUSE TO SEE IS STILL IN THE MIRROR.</span><span>向下照镜子 ↓</span></div>
+    </section>
+
+    <section class="screen test-screen" id="testScreen" aria-live="polite">
+      <div class="test-shell">
+        <div class="test-topbar">
+          <button class="icon-button" id="backButton" data-action="back" aria-label="上一题">←</button>
+          <div class="progress-copy"><span id="chapterKicker">MIRROR 01 / 04</span><strong id="chapterTitle">被看见的需求</strong></div>
+          <div class="question-count"><strong id="questionNumber">01</strong><span>/ 16</span></div>
+        </div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <div class="chapter-marks" id="chapterMarks"></div>
+
+        <article class="question-card" id="questionCard">
+          <div class="question-meta"><span id="questionIndex">FRAGMENT 01</span><span>选最真实的第一反应</span></div>
+          <h2 class="question-title" id="questionTitle"></h2>
+          <p class="question-aside" id="questionAside"></p>
+          <div class="options-grid" id="optionsGrid"></div>
+          <div class="question-footnote"><span>◈</span><span>没有标准答案，只有你习惯照见的那一面。</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="screen result-screen" id="resultScreen" aria-live="polite">
+      <div class="result-hero">
+        <div class="result-copy">
+          <div class="result-topline"><span id="personaCode">SELF FILE / NO. 05</span><span>NARCISSISM TRAIT INDEX</span></div>
+          <span class="result-kicker" id="resultKicker">特权与控制 × 批评敏感</span>
+          <h1 id="personaName">防御性优越者</h1>
+          <p class="persona-tagline" id="personaTagline">我不是永远正确，我只是很难接受自己不够好。</p>
+          <p class="persona-description" id="personaDescription"></p>
+          <div class="persona-keywords" id="personaKeywords"></div>
+        </div>
+        <div class="score-stage">
+          <div class="score-label">NPD ENERGY<br /><small>娱乐向自恋特质指数</small></div>
+          <div class="score-number" id="npdScore">68</div>
+          <div class="score-scale"><span>LOW</span><i><b id="scoreBar"></b></i><span>HIGH</span></div>
+          <div class="score-state" id="scoreState">高自恋特质</div>
+        </div>
+      </div>
+
+      <div class="result-body">
+        <section class="result-panel radar-panel">
+          <div class="section-heading"><span class="section-no">01</span><div><small>FOUR DIMENSIONS</small><h2>你的四维自恋能量</h2></div></div>
+          <div class="radar-wrap" id="resultRadar"></div>
+          <p class="radar-insight" id="radarInsight"></p>
+        </section>
+
+        <section class="result-panel analysis-panel">
+          <div class="analysis-card mechanism-card">
+            <span class="section-no">02 / INNER MECHANISM</span>
+            <h2>你的核心保护机制</h2>
+            <p id="mechanismText"></p>
+          </div>
+          <div class="analysis-grid">
+            <div class="analysis-card"><span>你的优势</span><ul id="strengthList"></ul></div>
+            <div class="analysis-card"><span>需要留意</span><ul id="caveatList"></ul></div>
+          </div>
+        </section>
+
+        <section class="result-panel quote-panel"><span class="section-no">03 / LOOK AGAIN</span><blockquote id="personaQuote"></blockquote><p id="personaAdvice"></p></section>
+
+        <section class="share-panel">
+          <div class="share-copy"><span class="section-no">04 / SHARE THE REFLECTION</span><h2>把这面镜子<br />带走。</h2><p>保存一张暗镜人格卡，或者复制一段分享文案。</p><div class="share-actions"><button class="primary-button" data-action="download">保存暗镜卡片 ↓</button><button class="outline-button" data-action="copy">复制分享文案</button></div><span class="share-note">1080 × 1440 · 适合小红书 / 朋友圈</span></div>
+          <div class="share-preview-wrap"><div class="share-preview"><div class="preview-top"><span>暗镜档案</span><span id="previewCode">NO. 05</span></div><div class="preview-mirror"><span class="preview-cross"></span></div><div class="preview-name" id="previewName">防御性优越者</div><div class="preview-tagline" id="previewTagline">我不是永远正确</div><div class="preview-score"><strong id="previewScore">68</strong><span>NPD INDEX</span></div><div class="preview-radar" id="previewRadar"></div><div class="preview-footer">16 个日常瞬间 · 照见你的自恋能量</div></div></div>
+        </section>
+
+        <div class="result-footer-actions"><button class="outline-button" data-action="restart">重新照一次</button><button class="text-button" data-action="home">返回首页 ↗</button></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
